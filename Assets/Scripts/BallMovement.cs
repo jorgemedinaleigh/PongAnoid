@@ -6,6 +6,7 @@ public class BallMovement : MonoBehaviour
 {
     [SerializeField] float ballSpeed = 20f;
     [SerializeField] float speedIncrement = 1.01f;
+
     float speed;
     Vector3 startDirection;
     Vector3 lastPosition;

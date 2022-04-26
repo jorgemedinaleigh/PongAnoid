@@ -1015,7 +1015,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51a60f1af759b944ab681b4d6890bca4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ballSpeed: 20
+  ballSpeed: 30
   speedIncrement: 1.01
 --- !u!135 &834019883
 SphereCollider:
@@ -1091,7 +1091,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &834019887
 Rigidbody:
@@ -1108,7 +1108,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 8
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!1 &956540877
 GameObject:
   m_ObjectHideFlags: 0
@@ -1661,7 +1661,7 @@ Transform:
   - {fileID: 83339432}
   - {fileID: 991758579}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1258498177
 GameObject:
@@ -1672,6 +1672,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1258498178}
+  - component: {fileID: 1258498179}
   m_Layer: 0
   m_Name: CPU Player
   m_TagString: Untagged
@@ -1699,6 +1700,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1258498179
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1258498177}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1241f70c12d8a7e47894b4d2037c46e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movementSpeed: 5
+  movementRange: 7
 --- !u!1001 &1391601041
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1939,7 +1954,7 @@ Transform:
   - {fileID: 1519391058}
   - {fileID: 185011688}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2101382768
 PrefabInstance:
