@@ -26,9 +26,7 @@ public class BallMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        speed = Mathf.Lerp(speed, (transform.position - lastPosition).magnitude / Time.deltaTime, 0.7f);
-        lastPosition = transform.position;
-        Debug.Log("Speed: " + speed);
+        MeasureSpeed();
     }
 
     void StartBallMovement()
@@ -39,8 +37,13 @@ public class BallMovement : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        Debug.Log("Collision");
         ballSpeed = ballSpeed * speedIncrement;
         ballRb.velocity = ballRb.velocity.normalized * ballSpeed;
+    }
+
+    void MeasureSpeed()
+    {
+        speed = Mathf.Lerp(speed, (transform.position - lastPosition).magnitude / Time.deltaTime, 0.7f);
+        lastPosition = transform.position;
     }
 }
