@@ -9,12 +9,20 @@ public class BlockController : MonoBehaviour
     [SerializeField] Material brickMat;
     [SerializeField] GameObject explosionParticles;
 
+    AudioSource blockAudioSource;
+
+    private void Start()
+    {
+        blockAudioSource = GetComponent<AudioSource>();
+    }
+
     void ProcessHit()
     {
         blockResistance = blockResistance - 1;
 
         if(blockResistance <= 0)
-        {            
+        {
+            blockAudioSource.Play();
             DestroyBlock();
         }
         else if(blockResistance <= blockThreshold)
@@ -35,6 +43,6 @@ public class BlockController : MonoBehaviour
     {
         GameObject explosion = (GameObject)Instantiate(explosionParticles, transform.position, explosionParticles.transform.rotation);
         Destroy(explosion, explosion.GetComponent<ParticleSystem>().main.startLifetimeMultiplier);
-        Destroy(gameObject);
+        Destroy(gameObject, blockAudioSource.clip.length);
     }
 }

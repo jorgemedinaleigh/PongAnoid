@@ -11,9 +11,11 @@ public class BallMovement : MonoBehaviour
     Vector3 startDirection;
     Vector3 lastPosition;
     Rigidbody ballRb;
+    AudioSource ballAudioSource;
 
     void Start()
     {
+        ballAudioSource = GetComponent<AudioSource>();
         ballRb = GetComponent<Rigidbody>();
         StartBallMovement();
         lastPosition = transform.position;
@@ -21,7 +23,7 @@ public class BallMovement : MonoBehaviour
 
     void Update()
     {
-        ballRb.velocity = ballRb.velocity.normalized * ballSpeed;
+
     }
 
     private void FixedUpdate()
@@ -37,6 +39,7 @@ public class BallMovement : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
+        ballAudioSource.Play();
         ballSpeed = ballSpeed * speedIncrement;
         ballRb.velocity = ballRb.velocity.normalized * ballSpeed;
     }
