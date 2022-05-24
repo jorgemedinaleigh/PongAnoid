@@ -10,10 +10,12 @@ public class BlockController : MonoBehaviour
     [SerializeField] GameObject explosionParticles;
 
     AudioSource blockAudioSource;
+    float timeToDestroy;
 
     private void Start()
     {
         blockAudioSource = GetComponent<AudioSource>();
+        timeToDestroy = blockAudioSource.clip.length - 0.8f;
     }
 
     void ProcessHit()
@@ -43,6 +45,6 @@ public class BlockController : MonoBehaviour
     {
         GameObject explosion = (GameObject)Instantiate(explosionParticles, transform.position, explosionParticles.transform.rotation);
         Destroy(explosion, explosion.GetComponent<ParticleSystem>().main.startLifetimeMultiplier);
-        Destroy(gameObject, blockAudioSource.clip.length);
+        Destroy(gameObject, timeToDestroy);
     }
 }
