@@ -8,11 +8,6 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float movementRange = 10;
 
     float vertical;
-    
-    void Start()
-    {
-        
-    }
 
     void Update()
     {
