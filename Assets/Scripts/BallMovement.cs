@@ -44,9 +44,11 @@ public class BallMovement : MonoBehaviour
         ballRb.velocity = ballRb.velocity.normalized * ballSpeed;
     }
 
-    void MeasureSpeed()
+    public float MeasureSpeed()
     {
         speed = Mathf.Lerp(speed, (transform.position - lastPosition).magnitude / Time.deltaTime, 0.7f);
         lastPosition = transform.position;
+
+        return speed;
     }
 }

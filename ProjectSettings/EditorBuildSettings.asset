@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/PlayerVSPlayer.unity
     guid: c6f7165f7e5f33940be64410715c6582
+  - enabled: 1
+    path: Assets/Scenes/EndGameScene.unity
+    guid: f6f6786ba3da75341b30802de30cedf4
   m_configObjects: {}

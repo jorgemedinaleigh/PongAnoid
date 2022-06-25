@@ -5,6 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+    public void LoadMenuScene()
+    {
+        SceneManager.LoadScene(0);
+    }
+
     public void LoadVSCPUScene()
     {
         SceneManager.LoadScene(1);
@@ -13,5 +18,5 @@ public class GameManager : MonoBehaviour
     public void LoadVSPlayerScene()
     {
         SceneManager.LoadScene(2);
-    }
+    }    
 }

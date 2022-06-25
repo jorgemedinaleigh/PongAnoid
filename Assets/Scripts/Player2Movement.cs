@@ -8,10 +8,12 @@ public class Player2Movement : MonoBehaviour
     [SerializeField] float movementRange = 10;
 
     float vertical;
+    float numberOfBlocks;
 
     void Update()
     {
         ProcessMovement();
+        ProcessDefeat();
     }
 
     void ProcessMovement()
@@ -30,5 +32,19 @@ public class Player2Movement : MonoBehaviour
         float clampedYPos = Mathf.Clamp(yPos, -movementRange, movementRange);
 
         transform.localPosition = new Vector3(transform.localPosition.x, clampedYPos, transform.localPosition.z);
+    }
+
+    float CountBlocks()
+    {
+        numberOfBlocks = transform.childCount;
+        return numberOfBlocks;
+    }
+
+    void ProcessDefeat()
+    {
+        if (CountBlocks() <= 0)
+        {
+            Destroy(gameObject);
+        }
     }
 }

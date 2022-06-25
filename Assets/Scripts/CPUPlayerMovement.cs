@@ -8,6 +8,7 @@ public class CPUPlayerMovement : MonoBehaviour
     [SerializeField] float movementRange = 10;
 
     GameObject ball;
+    float numberOfBlocks;
 
     void Start()
     {
@@ -17,6 +18,7 @@ public class CPUPlayerMovement : MonoBehaviour
     void Update()
     {
         ProcessMovement();
+        ProcessDefeat();
     }
 
     void ProcessMovement()
@@ -26,5 +28,19 @@ public class CPUPlayerMovement : MonoBehaviour
         float clampedYPos = Mathf.Clamp(yPos, -movementRange, movementRange);
 
         transform.localPosition = new Vector3(transform.localPosition.x, clampedYPos, transform.localPosition.z);
+    }
+
+    float CountBlocks()
+    {
+        numberOfBlocks = transform.childCount;
+        return numberOfBlocks;
+    }
+
+    void ProcessDefeat()
+    {
+        if (CountBlocks() <= 0)
+        {
+            Destroy(gameObject);
+        }
     }
 }
