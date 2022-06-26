@@ -25,7 +25,11 @@ public class Player2Movement : MonoBehaviour
         else if(Input.GetKey(KeyCode.L))
         {
             vertical = -1;
-        }        
+        }
+        else
+        {
+            vertical = 0;
+        }
 
         float yOffset = vertical * Time.deltaTime * movementSpeed;
         float yPos = transform.localPosition.y + yOffset;
