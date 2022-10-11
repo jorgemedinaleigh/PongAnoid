@@ -18,5 +18,5 @@ public class GameManager : MonoBehaviour
     public void LoadVSPlayerScene()
     {
         SceneManager.LoadScene(2);
-    }    
+    }
 }
